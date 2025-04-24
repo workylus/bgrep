@@ -17,9 +17,6 @@ def init():
 
 
 def derive_caption(image):
-    global captioner
-    if captioner is None:
-        init()
     result = captioner(image, max_new_tokens=20)
     raw_caption = result[0]["generated_text"]
     caption = raw_caption.lower().replace(PROMPT.lower(), "").strip()

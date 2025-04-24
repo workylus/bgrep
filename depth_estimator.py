@@ -22,7 +22,6 @@ def init():
 
 
 def get_depth_map(image):
-    init()
     original_size = image.size
 
     image = feature_extractor(

@@ -153,8 +153,6 @@ def predict(net, inputs_val, shapes_val, hypar, device):
 
 
 def segment(image):
-    if any(v is None for v in [hypar, net, device, im_preprocess]):
-        init()
     image_tensor, orig_size = load_image(image, hypar)
     mask = predict(net, image_tensor, orig_size, hypar, device)
 
